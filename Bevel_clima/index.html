@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Instalación, mantención y reparación de aires acondicionados en Biobío, Ñuble y Santiago. Marcas Midea, Clark, Anwo y más. Instalación desde $135.000 IVA incluido. 1 año de garantía." />
+    <meta name="keywords" content="aire acondicionado, instalación aire acondicionado, mantención aire acondicionado, reparación aire acondicionado, Biobío, Ñuble, Santiago, Midea, Clark, Anwo, Bevel Clima" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Bevel Clima SpA" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bevel Clima SpA – Especialistas en Climatización" />
+    <meta property="og:description" content="Instalación, mantención y reparación de aires acondicionados. Cobertura en Biobío, Ñuble y Santiago. Garantía de 1 año." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Bevel Clima SpA",
+      "description": "Instalación, mantención y reparación de aires acondicionados en Biobío, Ñuble y Santiago.",
+      "telephone": "+56986532869",
+      "areaServed": ["Biobío", "Ñuble", "Santiago"],
+      "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Climatización",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Instalación de Aire Acondicionado" },
+            "price": "135000",
+            "priceCurrency": "CLP"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <title>Bevel Clima SpA – Instalación y Mantención de Aire Acondicionado en Biobío, Ñuble y Santiago</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ── TOKENS ── */
+        :root {
+            --navy:    #0A1628;
+            --blue:    #1A3A6B;
+            --sky:     #2A6DD9;
+            --ice:     #D6E8FF;
+            --white:   #FFFFFF;
+            --gray50:  #F7F9FC;
+            --gray200: #DDE3ED;
+            --gray500: #6B7A99;
+            --gray900: #111827;
+            --accent:  #00C2FF;
+
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body:    'Inter', sans-serif;
+
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --shadow-card: 0 4px 24px rgba(10,22,40,.10);
+            --shadow-btn:  0 4px 20px rgba(42,109,217,.35);
+        }
+
+        /* ── RESET ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            color: var(--gray900);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        img { display: block; max-width: 100%; }
+        a { text-decoration: none; color: inherit; }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10,22,40,.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+        .nav__inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 24px; height: 68px;
+        }
+        .nav__logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem; font-weight: 800;
+            color: var(--white);
+            letter-spacing: -.02em;
+        }
+        .nav__logo span { color: var(--accent); }
+        .nav__links {
+            display: flex; gap: 32px; list-style: none;
+        }
+        .nav__links a {
+            color: rgba(255,255,255,.75);
+            font-size: .9rem; font-weight: 500;
+            transition: color .2s;
+        }
+        .nav__links a:hover { color: var(--accent); }
+        .nav__cta {
+            background: var(--sky);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: var(--radius-sm);
+            font-weight: 600 !important;
+            transition: background .2s !important;
+        }
+        .nav__cta:hover { background: var(--accent) !important; color: var(--navy) !important; }
+
+        .nav__hamburger {
+            display: none;
+            flex-direction: column; gap: 5px; cursor: pointer;
+            background: none; border: none; padding: 4px;
+        }
+        .nav__hamburger span {
+            display: block; width: 24px; height: 2px;
+            background: var(--white); border-radius: 2px;
+            transition: .3s;
+        }
+        .nav__mobile {
+            display: none;
+            flex-direction: column;
+            background: var(--navy);
+            padding: 16px 24px 24px;
+            gap: 16px;
+        }
+        .nav__mobile a {
+            color: rgba(255,255,255,.8);
+            font-size: 1rem; font-weight: 500;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+        .nav__mobile.open { display: flex; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: var(--navy);
+            display: flex; align-items: center;
+            position: relative; overflow: hidden;
+            padding: 120px 24px 80px;
+        }
+        /* Blueprint grid background */
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(42,109,217,.12) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(42,109,217,.12) 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+        /* Glow orbs */
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 600px; height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,194,255,.18) 0%, transparent 70%);
+            top: -100px; right: -100px;
+            pointer-events: none;
+        }
+        .hero__inner {
+            max-width: 1200px; margin: 0 auto; width: 100%;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+            align-items: center; position: relative; z-index: 1;
+        }
+        .hero__eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(0,194,255,.12);
+            border: 1px solid rgba(0,194,255,.25);
+            color: var(--accent);
+            font-size: .8rem; font-weight: 600;
+            letter-spacing: .1em; text-transform: uppercase;
+            padding: 6px 14px; border-radius: 100px;
+            margin-bottom: 24px;
+        }
+        .hero__eyebrow::before {
+            content: '';
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--accent);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(1.4); }
+        }
+        .hero__title {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            letter-spacing: -.03em;
+            margin-bottom: 20px;
+        }
+        .hero__title .highlight {
+            color: var(--accent);
+            display: block;
+        }
+        .hero__subtitle {
+            color: rgba(255,255,255,.65);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 480px;
+        }
+        .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: #25D366;
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 1rem; font-weight: 700;
+            padding: 16px 28px;
+            border-radius: var(--radius-sm);
+            border: none; cursor: pointer;
+            box-shadow: 0 4px 20px rgba(37,211,102,.35);
+            transition: transform .2s, box-shadow .2s;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(37,211,102,.45);
+        }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: transparent;
+            color: var(--white);
+            font-size: .95rem; font-weight: 600;
+            padding: 16px 24px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255,255,255,.25);
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+            text-decoration: none;
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            background: rgba(0,194,255,.08);
+            color: var(--accent);
+        }
+
+        .hero__image {
+            position: relative;
+        }
+        .hero__img-frame {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--blue) 0%, #0d2347 100%);
+            border: 1px solid rgba(255,255,255,.1);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .hero__img-frame img {
+            width: 100%; height: 100%; object-fit: cover;
+            opacity: .85;
+        }
+        .hero__img-placeholder {
+            color: rgba(255,255,255,.2);
+            text-align: center;
+            padding: 32px;
+        }
+        .hero__img-placeholder svg { margin: 0 auto 12px; }
+        .hero__img-placeholder p { font-size: .85rem; }
+
+        .hero__badge {
+            position: absolute;
+            bottom: -20px; left: -20px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            box-shadow: var(--shadow-card);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .hero__badge-icon {
+            width: 44px; height: 44px;
+            background: var(--ice);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem;
+        }
+        .hero__badge-text strong {
+            display: block;
+            font-size: 1.1rem; font-weight: 700;
+            color: var(--navy);
+        }
+        .hero__badge-text span {
+            font-size: .8rem; color: var(--gray500);
+        }
+
+        /* ── STATS BAR ── */
+        .stats {
+            background: var(--blue);
+            padding: 0;
+        }
+        .stats__inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+        }
+        .stats__item {
+            padding: 28px 24px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,.1);
+        }
+        .stats__item:last-child { border-right: none; }
+        .stats__number {
+            font-family: var(--font-display);
+            font-size: 2rem; font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+        }
+        .stats__label {
+            font-size: .8rem; color: rgba(255,255,255,.6);
+            margin-top: 4px; text-transform: uppercase; letter-spacing: .06em;
+        }
+
+        /* ── SECTIONS COMMON ── */
+        .section { padding: 96px 24px; }
+        .section--alt { background: var(--gray50); }
+        .section__inner { max-width: 1200px; margin: 0 auto; }
+        .section__header { text-align: center; margin-bottom: 64px; }
+        .section__tag {
+            display: inline-block;
+            color: var(--sky);
+            font-size: .8rem; font-weight: 700;
+            letter-spacing: .12em; text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .section__title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 800; color: var(--navy);
+            letter-spacing: -.02em; line-height: 1.15;
+        }
+        .section__subtitle {
+            color: var(--gray500);
+            font-size: 1.05rem;
+            margin-top: 12px;
+            max-width: 520px; margin-left: auto; margin-right: auto;
+        }
+
+        /* ── SERVICES ── */
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--gray200);
+            border-radius: var(--radius-md);
+            padding: 36px 28px;
+            transition: transform .25s, box-shadow .25s, border-color .25s;
+            position: relative; overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--sky), var(--accent));
+            transform: scaleX(0); transform-origin: left;
+            transition: transform .3s;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--ice);
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card__icon {
+            width: 56px; height: 56px;
+            background: var(--ice);
+            border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; margin-bottom: 20px;
+        }
+        .service-card__title {
+            font-family: var(--font-display);
+            font-size: 1.25rem; font-weight: 700;
+            color: var(--navy); margin-bottom: 10px;
+        }
+        .service-card__desc {
+            color: var(--gray500);
+            font-size: .95rem; line-height: 1.65;
+        }
+
+        /* ── PRECIO ── */
+        .pricing {
+            background: var(--navy);
+            padding: 96px 24px;
+        }
+        .pricing__inner {
+            max-width: 900px; margin: 0 auto; text-align: center;
+        }
+        .pricing__card {
+            background: linear-gradient(135deg, var(--blue) 0%, #112250 100%);
+            border: 1px solid rgba(0,194,255,.2);
+            border-radius: var(--radius-lg);
+            padding: 56px 48px;
+            position: relative; overflow: hidden;
+        }
+        .pricing__card::after {
+            content: '';
+            position: absolute; top: -60px; right: -60px;
+            width: 240px; height: 240px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,194,255,.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .pricing__from {
+            color: rgba(255,255,255,.5);
+            font-size: .9rem; text-transform: uppercase;
+            letter-spacing: .1em; margin-bottom: 8px;
+        }
+        .pricing__price {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800; color: var(--white);
+            line-height: 1;
+        }
+        .pricing__price sup {
+            font-size: 1.5rem; vertical-align: top;
+            margin-top: 12px; margin-right: 4px;
+            font-weight: 600; color: var(--accent);
+        }
+        .pricing__iva {
+            color: var(--accent);
+            font-size: .9rem; font-weight: 600;
+            margin-top: 6px;
+        }
+        .pricing__desc {
+            color: rgba(255,255,255,.6);
+            font-size: 1rem; margin: 20px 0 36px;
+        }
+        .pricing__features {
+            display: flex; flex-wrap: wrap;
+            gap: 12px; justify-content: center;
+            margin-bottom: 40px;
+        }
+        .pricing__feature {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.1);
+            color: rgba(255,255,255,.8);
+            font-size: .85rem; font-weight: 500;
+            padding: 8px 16px; border-radius: 100px;
+        }
+        .pricing__feature span { color: var(--accent); font-size: 1rem; }
+
+        /* ── MARCAS ── */
+        .brands__grid {
+            display: flex; flex-wrap: wrap;
+            gap: 16px; justify-content: center;
+            margin-top: 40px;
+        }
+        .brand-chip {
+            background: var(--white);
+            border: 2px solid var(--gray200);
+            border-radius: var(--radius-sm);
+            padding: 20px 36px;
+            font-family: var(--font-display);
+            font-size: 1.2rem; font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -.01em;
+            transition: border-color .2s, color .2s, box-shadow .2s;
+        }
+        .brand-chip:hover {
+            border-color: var(--sky);
+            color: var(--sky);
+            box-shadow: 0 4px 16px rgba(42,109,217,.15);
+        }
+
+        /* ── COBERTURA ── */
+        .coverage {
+            background: var(--navy);
+            padding: 96px 24px;
+        }
+        .coverage__grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 20px; margin-top: 48px;
+        }
+        .coverage__card {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: var(--radius-md);
+            padding: 32px 24px; text-align: center;
+            transition: background .2s, border-color .2s;
+        }
+        .coverage__card:hover {
+            background: rgba(0,194,255,.08);
+            border-color: rgba(0,194,255,.3);
+        }
+        .coverage__icon {
+            font-size: 2rem; margin-bottom: 12px;
+        }
+        .coverage__name {
+            font-family: var(--font-display);
+            font-size: 1.3rem; font-weight: 700;
+            color: var(--white); margin-bottom: 6px;
+        }
+        .coverage__sub {
+            font-size: .85rem; color: rgba(255,255,255,.45);
+        }
+
+        /* ── GARANTIA ── */
+        .warranty {
+            background: linear-gradient(135deg, var(--sky) 0%, #1a5ac5 100%);
+            padding: 72px 24px; text-align: center;
+        }
+        .warranty__inner { max-width: 680px; margin: 0 auto; }
+        .warranty__icon {
+            font-size: 3rem; margin-bottom: 16px;
+        }
+        .warranty__title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 800; color: var(--white);
+            margin-bottom: 12px;
+        }
+        .warranty__text {
+            color: rgba(255,255,255,.8);
+            font-size: 1.05rem;
+        }
+
+        /* ── CTA FINAL ── */
+        .cta-section {
+            padding: 96px 24px;
+            background: var(--gray50);
+            text-align: center;
+        }
+        .cta-section__inner { max-width: 600px; margin: 0 auto; }
+        .cta-section__title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 800; color: var(--navy);
+            margin-bottom: 12px;
+        }
+        .cta-section__sub {
+            color: var(--gray500); font-size: 1.05rem;
+            margin-bottom: 36px;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: var(--navy);
+            padding: 48px 24px 28px;
+            border-top: 1px solid rgba(255,255,255,.07);
+        }
+        .footer__inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px; margin-bottom: 40px;
+        }
+        .footer__brand-name {
+            font-family: var(--font-display);
+            font-size: 1.25rem; font-weight: 800;
+            color: var(--white); margin-bottom: 10px;
+        }
+        .footer__brand-name span { color: var(--accent); }
+        .footer__brand-desc {
+            color: rgba(255,255,255,.4);
+            font-size: .9rem; line-height: 1.6;
+        }
+        .footer__col-title {
+            font-size: .8rem; font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase; letter-spacing: .1em;
+            margin-bottom: 16px;
+        }
+        .footer__links { list-style: none; }
+        .footer__links li { margin-bottom: 10px; }
+        .footer__links a {
+            color: rgba(255,255,255,.5);
+            font-size: .9rem;
+            transition: color .2s;
+        }
+        .footer__links a:hover { color: var(--white); }
+        .footer__bottom {
+            border-top: 1px solid rgba(255,255,255,.07);
+            padding-top: 24px;
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 12px;
+        }
+        .footer__copy {
+            color: rgba(255,255,255,.3);
+            font-size: .82rem;
+        }
+
+        /* ── WHATSAPP FLOAT ── */
+        .wa-float {
+            position: fixed; bottom: 28px; right: 28px; z-index: 200;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .wa-float__label {
+            background: var(--white);
+            color: var(--gray900);
+            font-size: .85rem; font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 100px;
+            box-shadow: 0 4px 16px rgba(0,0,0,.12);
+            white-space: nowrap;
+            animation: fadeSlide 1s ease .5s both;
+        }
+        .wa-float__btn {
+            width: 60px; height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,.4);
+            transition: transform .2s, box-shadow .2s;
+            text-decoration: none;
+            animation: fadeSlide 1s ease .3s both;
+        }
+        .wa-float__btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 28px rgba(37,211,102,.5);
+        }
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .hero__inner { grid-template-columns: 1fr; text-align: center; gap: 48px; }
+            .hero__subtitle { margin: 0 auto 40px; }
+            .hero__actions { justify-content: center; }
+            .hero__badge { left: 50%; transform: translateX(-50%); bottom: -20px; white-space: nowrap; }
+            .services__grid { grid-template-columns: 1fr; }
+            .stats__inner { grid-template-columns: repeat(2, 1fr); }
+            .stats__item:nth-child(2) { border-right: none; }
+            .coverage__grid { grid-template-columns: 1fr; }
+            .footer__inner { grid-template-columns: 1fr; gap: 32px; }
+            .nav__links { display: none; }
+            .nav__hamburger { display: flex; }
+        }
+        @media (max-width: 600px) {
+            .pricing__card { padding: 40px 24px; }
+            .stats__inner { grid-template-columns: repeat(2, 1fr); }
+            .hero__badge { display: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" aria-label="Navegación principal">
+        <div class="nav__inner">
+            <a href="#inicio" class="nav__logo">Bevel <span>Clima</span></a>
+            <ul class="nav__links" role="list">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#precio">Precio</a></li>
+                <li><a href="#marcas">Marcas</a></li>
+                <li><a href="#cobertura">Cobertura</a></li>
+                <li><a href="https://wa.me/56986532869?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20sus%20servicios%20de%20aire%20acondicionado." target="_blank" rel="noopener noreferrer" class="nav__cta">Cotizar por WhatsApp</a></li>
+            </ul>
+            <button class="nav__hamburger" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="nav__mobile" id="mobileMenu" role="navigation">
+            <a href="#servicios" onclick="toggleMenu()">Servicios</a>
+            <a href="#precio" onclick="toggleMenu()">Precio</a>
+            <a href="#marcas" onclick="toggleMenu()">Marcas</a>
+            <a href="#cobertura" onclick="toggleMenu()">Cobertura</a>
+            <a href="https://wa.me/56986532869?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20sus%20servicios%20de%20aire%20acondicionado." target="_blank" rel="noopener noreferrer" onclick="toggleMenu()">📲 Cotizar por WhatsApp</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="hero__inner">
+            <div class="hero__content">
+                <div class="hero__eyebrow">Especialistas en Climatización</div>
+                <h1 class="hero__title">
+                    Tu hogar al clima
+                    <span class="highlight">perfecto.</span>
+                </h1>
+                <p class="hero__subtitle">
+                    Instalación, mantención y reparación de aires acondicionados en Biobío, Ñuble y Santiago. Técnicos certificados, garantía incluida.
+                </p>
+                <div class="hero__actions">
+                    <a href="https://wa.me/56986532869?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20la%20instalaci%C3%B3n%20de%20un%20aire%20acondicionado." target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Cotizar por WhatsApp">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Cotizar gratis
+                    </a>
+                    <a href="#servicios" class="btn-secondary">
+                        Ver servicios
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero__image">
+                <div class="hero__img-frame">
+                    <img src="/images/img_3.jpeg" alt="Técnico instalando aire acondicionado" />
+                </div>
+                <div class="hero__badge">
+                    <div class="hero__badge-icon">🛡️</div>
+                    <div class="hero__badge-text">
+                        <strong>1 año de garantía</strong>
+                        <span>en todos los trabajos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats" role="region" aria-label="Datos destacados">
+        <div class="stats__inner">
+            <div class="stats__item">
+                <div class="stats__number">3</div>
+                <div class="stats__label">Regiones cubiertas</div>
+            </div>
+            <div class="stats__item">
+                <div class="stats__number">$135K</div>
+                <div class="stats__label">Instalación IVA incl.</div>
+            </div>
+            <div class="stats__item">
+                <div class="stats__number">1 año</div>
+                <div class="stats__label">Garantía del servicio</div>
+            </div>
+            <div class="stats__item">
+                <div class="stats__number">5+</div>
+                <div class="stats__label">Marcas disponibles</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section" id="servicios">
+        <div class="section__inner">
+            <header class="section__header">
+                <p class="section__tag">¿Qué hacemos?</p>
+                <h2 class="section__title">Servicios de climatización</h2>
+                <p class="section__subtitle">Cubrimos todo el ciclo de vida de tu equipo, desde la instalación hasta su mantención periódica.</p>
+            </header>
+            <div class="services__grid">
+                <article class="service-card">
+                    <div class="service-card__icon" aria-hidden="true">🔧</div>
+                    <h3 class="service-card__title">Instalación</h3>
+                    <p class="service-card__desc">Montaje profesional de equipos split, multi-split y cassette. Instalación limpia, segura y con todas las conexiones eléctricas certificadas. Desde $135.000 IVA incluido.</p>
+                </article>
+                <article class="service-card">
+                    <div class="service-card__icon" aria-hidden="true">🛠️</div>
+                    <h3 class="service-card__title">Mantención</h3>
+                    <p class="service-card__desc">Limpieza de filtros, revisión de gas refrigerante, revisión eléctrica y diagnóstico completo. Mantén tu equipo funcionando al máximo rendimiento todo el año.</p>
+                </article>
+                <article class="service-card">
+                    <div class="service-card__icon" aria-hidden="true">⚡</div>
+                    <h3 class="service-card__title">Reparación</h3>
+                    <p class="service-card__desc">Diagnóstico y reparación de fallas eléctricas, carga de gas, problemas de compresor y más. Atendemos cualquier marca y modelo con repuestos de calidad.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="precio" aria-labelledby="precio-title">
+        <div class="pricing__inner">
+            <header class="section__header">
+                <p class="section__tag" style="color: var(--accent);">Precio de instalación</p>
+                <h2 class="section__title" id="precio-title" style="color: var(--white);">Claro y sin sorpresas</h2>
+            </header>
+            <div class="pricing__card">
+                <p class="pricing__from">Instalación de aire acondicionado</p>
+                <div class="pricing__price">
+                    <sup>$</sup>135.000
+                </div>
+                <p class="pricing__iva">✓ IVA incluido</p>
+                <p class="pricing__desc">Precio por equipo instalado. Consulta por equipos adicionales o instalaciones en altura.</p>
+                <div class="pricing__features">
+                    <div class="pricing__feature"><span>✓</span> Mano de obra</div>
+                    <div class="pricing__feature"><span>✓</span> Soporte y anclaje</div>
+                    <div class="pricing__feature"><span>✓</span> Cañería estándar</div>
+                    <div class="pricing__feature"><span>✓</span> Prueba de funcionamiento</div>
+                    <div class="pricing__feature"><span>✓</span> 1 año de garantía</div>
+                </div>
+                <a href="https://wa.me/56986532869?text=Hola%2C%20quiero%20cotizar%20la%20instalaci%C3%B3n%20de%20mi%20aire%20acondicionado." target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin: 0 auto; display: inline-flex;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Agendar instalación
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--alt" id="marcas">
+        <div class="section__inner">
+            <header class="section__header">
+                <p class="section__tag">Equipos que instalamos</p>
+                <h2 class="section__title">Marcas con las que trabajamos</h2>
+                <p class="section__subtitle">Trabajamos con equipos de calidad comprobada para hogares y empresas.</p>
+            </header>
+            <div class="brands__grid" role="list">
+                <div class="brand-chip" role="listitem">Midea</div>
+                <div class="brand-chip" role="listitem">Clark</div>
+                <div class="brand-chip" role="listitem">Anwo</div>
+                <div class="brand-chip" role="listitem">Samsung</div>
+                <div class="brand-chip" role="listitem">Y más...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="coverage" id="cobertura" aria-labelledby="cobertura-title">
+        <div class="section__inner">
+            <header class="section__header">
+                <p class="section__tag" style="color: var(--accent);">Dónde operamos</p>
+                <h2 class="section__title" id="cobertura-title" style="color: var(--white);">Cobertura en tres regiones</h2>
+                <p class="section__subtitle" style="color: rgba(255,255,255,.55);">Atendemos en toda la región del Biobío, Ñuble y Santiago con la misma calidad de servicio.</p>
+            </header>
+            <div class="coverage__grid">
+                <div class="coverage__card">
+                    <div class="coverage__icon" aria-hidden="true">📍</div>
+                    <h3 class="coverage__name">Región del Biobío</h3>
+                    <p class="coverage__sub">Concepción, Los Ángeles, Chillán y comunas</p>
+                </div>
+                <div class="coverage__card">
+                    <div class="coverage__icon" aria-hidden="true">📍</div>
+                    <h3 class="coverage__name">Región de Ñuble</h3>
+                    <p class="coverage__sub">Chillán, Trehuaco, San Carlos y comunas</p>
+                </div>
+                <div class="coverage__card">
+                    <div class="coverage__icon" aria-hidden="true">📍</div>
+                    <h3 class="coverage__name">Región Metropolitana</h3>
+                    <p class="coverage__sub">Santiago y comunas del Gran Santiago</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="warranty">
+        <div class="warranty__inner">
+            <div class="warranty__icon" aria-hidden="true">🛡️</div>
+            <h2 class="warranty__title">1 año de garantía en todos los trabajos</h2>
+            <p class="warranty__text">Respaldamos cada instalación, mantención y reparación. Si algo falla dentro del período de garantía, volvemos sin costo adicional.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-section__inner">
+            <h2 class="cta-section__title">¿Listo para climatizar tu espacio?</h2>
+            <p class="cta-section__sub">Escríbenos por WhatsApp y recibe una cotización sin compromiso en minutos.</p>
+            <a href="https://wa.me/56986532869?text=Hola%20Bevel%20Clima%2C%20me%20gustar%C3%ADa%20recibir%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 1.05rem; padding: 18px 36px;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Cotizar ahora — es gratis
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div>
+                <div class="footer__brand-name">Bevel <span>Clima</span> SpA</div>
+                <p class="footer__brand-desc">Especialistas en instalación, mantención y reparación de aires acondicionados. Cobertura en Biobío, Ñuble y Santiago.</p>
+            </div>
+            <nav aria-label="Servicios">
+                <p class="footer__col-title">Servicios</p>
+                <ul class="footer__links">
+                    <li><a href="#servicios">Instalación</a></li>
+                    <li><a href="#servicios">Mantención</a></li>
+                    <li><a href="#servicios">Reparación</a></li>
+                </ul>
+            </nav>
+            <nav aria-label="Empresa">
+                <p class="footer__col-title">Contacto</p>
+                <ul class="footer__links">
+                    <li><a href="https://wa.me/56986532869" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                    <li><a href="#cobertura">Cobertura</a></li>
+                    <li><a href="#precio">Precio</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copy">© 2026 Bevel Clima SpA. Todos los derechos reservados.</p>
+            <p class="footer__copy">Biobío · Ñuble · Santiago</p>
+        </div>
+    </footer>
+
+    <!-- ICONO WHATSAPP FLOTANTE -->
+    <div class="wa-float" role="complementary" aria-label="Contacto rápido por WhatsApp">
+        <span class="wa-float__label">¡Cotiza ahora!</span>
+        <a href="https://wa.me/56986532869?text=Hola%20Bevel%20Clima%2C%20me%20gustar%C3%ADa%20consultar%20por%20sus%20servicios." target="_blank" rel="noopener noreferrer" class="wa-float__btn" aria-label="Escribir por WhatsApp">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('hamburger');
+            const isOpen = menu.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen);
+        }
+
+        // Cerrar menú al hacer scroll
+        window.addEventListener('scroll', () => {
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open');
+                document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+            }
+        }, { passive: true });
+    </script>
+
+</body>
+</html>
